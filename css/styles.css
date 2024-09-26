@@ -1,0 +1,428 @@
+/* Estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Fondo claro uniforme */
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+    min-height: 100vh;
+    overflow-x: hidden; /* Evitar scroll horizontal */
+}
+
+/* Estilos específicos del Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content .close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-content .close:hover,
+.modal-content .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Encapsulando los estilos de la forma de login */
+.modal .form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal .form_front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal .form_details {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.modal .input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.modal .btn {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+.modal .btn:hover {
+    background-color: #45a049;
+}
+
+.modal .switch {
+    font-size: 14px;
+    text-align: center;
+}
+
+.modal .signup_tog {
+    color: #007bff;
+    cursor: pointer;
+}
+
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 20px;
+    background-color: inherit; 
+    transition: background-color 0.3s;
+    z-index: 1000;
+    position: relative;
+    width: 100%;
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.menu-toggle {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000; 
+}
+
+.login {
+    background-color: #000;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-left: 1130px; 
+}
+
+/* Sidebar */
+nav {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 250px;
+    background-color: #f9f9f9; 
+    border: none; 
+    transition: transform 0.3s;
+    height: 100vh;
+    z-index: 1000; 
+    transform: translateX(-100%); 
+}
+
+nav.open {
+    transform: translateX(0); 
+}
+
+nav ul {
+    list-style: none;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+/* Banner Section */
+.banner {
+    width: 100%;
+    height: 200px; 
+    overflow: hidden;
+    position: relative;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Main content */
+main {
+    padding-top: 20px; 
+    padding: 20px;
+    text-align: center;
+    background-color: inherit; 
+    transition: background-color 0.3s;
+}
+
+.register {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: inherit; 
+    transition: background-color 0.3s;
+}
+
+footer button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Estilos para el tema oscuro */
+body.dark {
+    background-color: #333; 
+    color: #f9f9f9;
+}
+
+body.dark header,
+body.dark nav,
+body.dark main,
+body.dark footer {
+    background-color: inherit; 
+    box-shadow: none; 
+    border: none; 
+}
+
+body.dark nav a {
+    color: #f9f9f9;
+}
+
+body.dark .register {
+    background-color: #007bff;
+}
+
+body.dark footer button {
+    background-color: #007bff;
+}
+
+/* Estilos para el interruptor */
+.cl-toggle-switch {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.cl-switch {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Input */
+.cl-switch > input {
+    appearance: none;
+    z-index: -1;
+    position: absolute;
+    right: 6px;
+    top: -8px;
+    display: block;
+    margin: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(0, 0, 0, 0.38);
+    outline: none;
+    opacity: 0;
+    transform: scale(1);
+    pointer-events: none;
+    transition: opacity 0.3s 0.1s, transform 0.2s 0.1s;
+}
+
+/* Track */
+.cl-switch > span::before {
+    content: "";
+    display: inline-block;
+    margin: 5px 0 5px 10px;
+    border-radius: 7px;
+    width: 36px;
+    height: 14px;
+    background-color: rgb(0, 0, 0, 0.38);
+    vertical-align: top;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+/* Thumb */
+.cl-switch > span::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    right: 16px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    box-shadow: none; /* Eliminar sombra */
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+/* Checked */
+.cl-switch > input:checked {
+    right: -10px;
+    background-color: #85b8b7;
+}
+
+.cl-switch > input:checked + span::before {
+    background-color: #85b8b7;
+}
+
+.cl-switch > input:checked + span::after {
+    background-color: #018786;
+    transform: translateX(16px);
+}
+
+/* Dropdown */
+.dropdown-menu {
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    background-color: inherit;
+    box-shadow: none; /* Eliminar sombra */
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu.hidden {
+    display: none;
+}
+
+.dropdown-menu button {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+.dropdown-menu button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* From Uiverse.io by R0G3RF4 */
+button {
+    position: relative;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid #0163E0;
+    border-radius: 25px;
+    outline: none;
+    overflow: hidden;
+    color: #0163E0;
+    text-align: center;
+}
+
+button svg {
+    fill: #0163E0;
+    height: 25px;
+    width: 25px;
+}
+
+button span {
+    margin: 10px;
+}
+
+button::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    content: '';
+    border-radius: 50%;
+    display: block;
+    width: 20em;
+    height: 20em;
+    left: -5em;
+    text-align: center;
+    z-index: -1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        width: 200px;
+    }
+
+    .menu-toggle {
+        margin-right: 10px;
+    }
+
+    .login {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .banner {
+        height: 150px;
+    }
+
+    main {
+        padding-top: 170px;
+    }
+}
